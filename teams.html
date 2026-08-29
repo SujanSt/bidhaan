@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Bidhaan Pvt. Ltd.</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f8fafc;
+        }
+        .btn-vibrant {
+            background: linear-gradient(135deg, #06b6d4 0%, #0d9488 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-vibrant:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.4);
+        }
+        .team-card {
+            background: linear-gradient(145deg, rgba(15, 27, 30, 0.7) 0%, rgba(3, 7, 18, 0.9) 100%);
+            border: 1px solid rgba(20, 184, 166, 0.15);
+            border-radius: 2rem;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .team-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.2);
+        }
+        .team-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+        }
+        .team-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .team-card:hover .team-img-wrapper img {
+            transform: scale(1.05);
+        }
+        .social-overlay {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(3, 7, 18, 0.95), transparent);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            transition: bottom 0.3s ease;
+        }
+        .team-card:hover .social-overlay {
+            bottom: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 selection:bg-cyan-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-[#030712]/85 backdrop-blur-md border-b border-white/10 py-5 transition-all duration-300">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 btn-vibrant rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <span class="font-bold text-xl">B</span>
+                </div>
+                <span class="text-xl font-extrabold tracking-tighter text-white">BIDHAAN</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a>
+                <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="teams.html" class="text-cyan-400">Team</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="contact.html" class="btn-vibrant px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-white shadow-md">Get Started</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-2xl text-slate-300 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#030712]/95 backdrop-blur-xl border-b border-white/10 py-6 px-6 shadow-2xl">
+            <div class="flex flex-col space-y-4 text-base font-semibold text-slate-300">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors py-2 border-b border-slate-800">Home</a>
+                <a href="services.html" class="hover:text-cyan-400 transition-colors py-2 border-b border-slate-800">Services</a>
+                <a href="about.html" class="hover:text-cyan-400 transition-colors py-2 border-b border-slate-800">About</a>
+                <a href="teams.html" class="text-cyan-400 py-2 border-b border-slate-800">Team</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition-colors py-2">Contact</a>
+                <div class="pt-2">
+                    <a href="contact.html" class="block text-center btn-vibrant px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-white shadow-md">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="pt-40 pb-16 relative overflow-hidden text-center">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950/0 to-slate-950/0 pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10 space-y-4 max-w-3xl">
+            <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-950/50 border border-cyan-800/50 px-4 py-1.5 rounded-full">Meet The Experts</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">The Minds <span class="text-cyan-400">Behind Bidhaan.</span></h1>
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed">Passionate engineers, creative designers, and tech strategists dedicated to building your digital future.</p>
+        </div>
+    </header>
+
+    <!-- TEAM SECTION -->
+    <section class="py-16 pb-32">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Team Member 1: Aashish Thapa -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Aashish Thapa">
+                        <div class="social-overlay">
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fab fa-github"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center space-y-2">
+                        <h3 class="text-xl font-bold text-white">Aashish Thapa</h3>
+                        <p class="text-xs font-semibold text-teal-400 uppercase tracking-wider">Chairman</p>
+                        <p class="text-slate-400 text-xs leading-relaxed pt-2">Directing high-level strategy and steering organizational growth toward pioneering digital transformation.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2: Sagar Pandey -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Sagar Pandey">
+                        <div class="social-overlay">
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fab fa-github"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center space-y-2">
+                        <h3 class="text-xl font-bold text-white">Sagar Pandey</h3>
+                        <p class="text-xs font-semibold text-teal-400 uppercase tracking-wider">CTO</p>
+                        <p class="text-slate-400 text-xs leading-relaxed pt-2">Overseeing tech architecture, robust system integrations, and cutting-edge software development lifecycles.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3: Sambridhi Timilsina -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Sambridhi Timilsina">
+                        <div class="social-overlay">
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center space-y-2">
+                        <h3 class="text-xl font-bold text-white">Sambridhi Timilsina</h3>
+                        <p class="text-xs font-semibold text-teal-400 uppercase tracking-wider">Head of Department</p>
+                        <p class="text-slate-400 text-xs leading-relaxed pt-2">Managing core departmental initiatives, quality benchmarks, and cross-functional project deliverables.</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 4: Devyan Khadka -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Devyan Khadka">
+                        <div class="social-overlay">
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fab fa-github"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center space-y-2">
+                        <h3 class="text-xl font-bold text-white">Devyan Khadka</h3>
+                        <p class="text-xs font-semibold text-teal-400 uppercase tracking-wider">Ops Manager</p>
+                        <p class="text-slate-400 text-xs leading-relaxed pt-2">Streamlining everyday operational workflows, resource scheduling, and client communication channels.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#060a0b] pt-20 pb-10 border-t border-slate-800/80">
+        <div class="container mx-auto px-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+
+                <!-- Company -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 btn-vibrant rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <span class="font-bold text-xl">B</span>
+                        </div>
+                        <span class="text-xl font-bold tracking-tighter text-white">BIDHAAN</span>
+                    </div>
+
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Kathmandu's premium IT hub. Elegant digital solutions for complex business problems.
+                    </p>
+
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-teal-400 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- What We Do -->
+                <div>
+                    <h4 class="font-extrabold text-white mb-6 uppercase tracking-widest text-[10px]">
+                        What We Do
+                    </h4>
+
+                    <ul class="space-y-4 text-sm font-medium text-slate-400">
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('services')" class="hover:text-cyan-400 transition-all">Web Development</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('services')" class="hover:text-cyan-400 transition-all">Mobile App Solutions</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('services')" class="hover:text-cyan-400 transition-all">Cloud & DevOps</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('services')" class="hover:text-cyan-400 transition-all">Digital Marketing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-extrabold text-white mb-6 uppercase tracking-widest text-[10px]">
+                        Contact Info
+                    </h4>
+
+                    <div class="space-y-4 text-sm font-bold text-slate-300">
+                        <p class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-cyan-400"></i>
+                            +977 9802490280
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-teal-400"></i>
+                            hello@bidhaan.com
+                        </p>
+
+                        <p class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1 text-emerald-400"></i>
+                            Basuki Marga, Baneshwor,<br>
+                            Kathmandu, Nepal
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="bg-slate-900/80 p-8 rounded-[2.5rem] border border-slate-800">
+                    <h4 class="font-bold text-white mb-4 text-lg">Newsletter</h4>
+
+                    <form class="space-y-3" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            class="w-full bg-slate-950 text-white placeholder-slate-500 px-4 py-3 rounded-xl text-xs outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all"
+                        >
+
+                        <button class="w-full btn-vibrant text-white py-3 rounded-xl text-xs font-bold uppercase tracking-widest">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-slate-500">
+                    © 2026 BIDHAAN PVT. LTD.
+                </p>
+
+                <div class="flex space-x-6 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                    <a href="#" class="hover:text-cyan-400 transition-all">Privacy Policy</a>
+                    <a href="#" class="hover:text-cyan-400 transition-all">Career</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
