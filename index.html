@@ -739,11 +739,24 @@
                             <h2 class="text-5xl font-extrabold mb-6 tracking-tight text-white">Let's <span class="text-cyan-400">Connect.</span></h2>
                             <p class="text-slate-400 font-medium">Have a project in mind? We'd love to hear from you.</p>
                         </div>
-                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message Sent!');">
+                        <form class="space-y-4" onsubmit="event.preventDefault(); 
+                            const name = this.querySelector('input[type=\'text\']').value.trim();
+                            const email = this.querySelector('input[type=\'email\']').value.trim();
+                            const message = this.querySelector('textarea').value.trim();
+                            
+                            if (!name || !email || !message) {
+                                alert('Please fill in all fields (Full Name, Email Address, and Message) before sending.');
+                                return;
+                            }
+                            
+                            const subject = encodeURIComponent('New Contact Message from ' + name);
+                            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                            window.location.href = 'mailto:connect@bidhaannepal.com?subject=' + subject + '&body=' + body;
+                        ">
                             <input type="text" placeholder="Full Name" class="w-full bg-slate-900/80 text-white placeholder-slate-500 p-5 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all font-medium">
                             <input type="email" placeholder="Email Address" class="w-full bg-slate-900/80 text-white placeholder-slate-500 p-5 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all font-medium">
                             <textarea rows="4" placeholder="Your Message" class="w-full bg-slate-900/80 text-white placeholder-slate-500 p-5 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all font-medium"></textarea>
-                            <button class="w-full btn-vibrant text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-teal-950">Send Message</button>
+                            <button type="submit" class="w-full btn-vibrant text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-teal-950">Send Message</button>
                         </form>
                     </div>
 
@@ -805,7 +818,7 @@
                 <h4 class="font-extrabold text-white mb-6 uppercase tracking-widest text-[10px]">Contact Info</h4>
                 <div class="space-y-4 text-sm font-bold text-slate-300">
                     <p class="flex items-center"><i class="fas fa-phone-alt mr-3 text-cyan-400"></i> +977 9802490280</p>
-                    <p class="flex items-center"><i class="fas fa-envelope mr-3 text-teal-400"></i> hello@bidhaan.com</p>
+                    <p class="flex items-center"><i class="fas fa-envelope mr-3 text-teal-400"></i> bidhaan@bidhaannepal.com</p>
                     <p class="flex items-start"><i class="fas fa-map-marker-alt mr-3 mt-1 text-emerald-400"></i> Basuki Marga, Baneshwor,<br>Kathmandu, Nepal</p>
                 </div>
             </div>
