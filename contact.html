@@ -114,7 +114,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Email Address</h4>
-                                <p class="text-base font-bold text-white mt-1">hello@bidhaan.com</p>
+                                <p class="text-base font-bold text-white mt-1">info@bidhaannepal.com</p>
                             </div>
                         </div>
 
@@ -133,18 +133,31 @@
                 <!-- Contact Form Card -->
                 <div class="contact-card p-8 md:p-10 rounded-[2.5rem] shadow-2xl border border-slate-800">
                     <h3 class="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
-                    <form class="space-y-5" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <form class="space-y-5" onsubmit="event.preventDefault(); 
+                        const name = this.querySelector('input[type=\'text\']').value.trim();
+                        const email = this.querySelector('input[type=\'email\']').value.trim();
+                        const message = this.querySelector('textarea').value.trim();
+                        
+                        if (!name || !email || !message) {
+                            alert('Please fill out all required fields before sending.');
+                            return;
+                        }
+                        
+                        const subject = encodeURIComponent('New Message from ' + name);
+                        const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                        window.location.href = 'mailto:connect@bidhaannepal.com?subject=' + subject + '&body=' + body;
+                    ">
                         <div>
                             <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Full Name</label>
-                            <input type="text" placeholder="John Doe" required class="w-full bg-slate-950 text-white placeholder-slate-600 px-4 py-3.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all">
+                            <input type="text" placeholder="John Doe" class="w-full bg-slate-950 text-white placeholder-slate-600 px-4 py-3.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Email Address</label>
-                            <input type="email" placeholder="john@example.com" required class="w-full bg-slate-950 text-white placeholder-slate-600 px-4 py-3.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all">
+                            <input type="email" placeholder="john@example.com" class="w-full bg-slate-950 text-white placeholder-slate-600 px-4 py-3.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Your Message</label>
-                            <textarea rows="4" placeholder="Tell us about your project..." required class="w-full bg-slate-950 text-white placeholder-slate-600 px-4 py-3.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all resize-none"></textarea>
+                            <textarea rows="4" placeholder="Tell us about your project..." class="w-full bg-slate-950 text-white placeholder-slate-600 px-4 py-3.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-cyan-400/40 border border-slate-800 transition-all resize-none"></textarea>
                         </div>
                         <button type="submit" class="w-full btn-vibrant text-white py-4 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg">Send Message</button>
                     </form>
@@ -207,7 +220,7 @@
                         </p>
                         <p class="flex items-center">
                             <i class="fas fa-envelope mr-3 text-teal-400"></i>
-                            hello@bidhaan.com
+                            info@bidhaannepal.com
                         </p>
                         <p class="flex items-start">
                             <i class="fas fa-map-marker-alt mr-3 mt-1 text-emerald-400"></i>
